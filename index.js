@@ -47,8 +47,8 @@ app.get("/getro", jsonParser, async (req, res) => {
           url,
           company_name,
           logo_url,
-          topics,
-          job_functions,
+          topics: topics?.join(),
+          job_functions: job_functions?.join(),
         };
       });
       if (newGetroData?.length) {
