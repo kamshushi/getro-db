@@ -19,8 +19,8 @@ app.get("/getro", jsonParser, async (req, res) => {
         headers: {
           "Content-Type": "application/json",
           Accept: "application/json",
-          "X-User-Email": "mike.nicholls@mseq.vc",
-          "X-User-Token": "aBinXbgNmomz6gFvMyao",
+          "X-User-Email": process.env.GETRO_EMAIL,
+          "X-User-Token": process.env.GETRO_TOKEN,
         },
       }
     );
