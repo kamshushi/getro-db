@@ -47,8 +47,8 @@ app.get("/getro", jsonParser, async (req, res) => {
           url,
           company_name,
           logo_url,
-          topics: topics?.join(),
-          job_functions: job_functions?.join(),
+          topics: topics?.join() || "No Topics",
+          job_functions: job_functions?.join() || "No Job Functions",
         };
       });
       if (newGetroData?.length) {
@@ -64,7 +64,7 @@ app.get("/getro", jsonParser, async (req, res) => {
           //   );
           // }
 
-          res.json({ items: newGetroData }).status(200);
+          res.json({ items: createRes?.data }).status(200);
         } else {
           console.log("failed to insert to supabase");
 
